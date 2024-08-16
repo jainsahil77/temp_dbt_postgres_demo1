@@ -30,22 +30,22 @@ WITH TelemetryFeatures AS (
 ComprehensiveInsights AS (
     SELECT
         tf.DATETIME,
-        tf."machineID",
+        tf.machineid,
         tf.MODEL,
         tf.AGE,
         at.AVG_VOLT,
         at.AVG_ROTATE,
         at.AVG_PRESSURE,
         at.AVG_VIBRATION,
-        ed."errorID",
+        ed.errorid,
         md.COMP,
         fd.FAILURE
     FROM
         TelemetryFeatures tf
-    LEFT JOIN AvgTelemetry at ON tf."machineID" = at."machineID"
-    LEFT JOIN ErrorData ed ON tf."machineID" = ed."machineID" AND tf.DATETIME = ed.DATETIME
-    LEFT JOIN MaintenanceData md ON tf."machineID" = md."machineID" AND tf.DATETIME = md.DATETIME
-    LEFT JOIN FailureData fd ON tf."machineID" = fd."machineID" AND tf.DATETIME = fd.DATETIME
+    LEFT JOIN AvgTelemetry at ON tf.machineid = at.machineid
+    LEFT JOIN ErrorData ed ON tf.machineid = ed.machineid AND tf.DATETIME = ed.DATETIME
+    LEFT JOIN MaintenanceData md ON tf.machineid = md.machineid AND tf.DATETIME = md.DATETIME
+    LEFT JOIN FailureData fd ON tf.machineid = fd.machineid AND tf.DATETIME = fd.DATETIME
 )
 
 select * from ComprehensiveInsights
