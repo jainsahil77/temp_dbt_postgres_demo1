@@ -11,7 +11,7 @@ models:
   - name: stg_avg_telemetry #2
     description: "Containts the aggregated value of Telemetry data, uses the TelemetryFeatures views to create this view"
     columns:
-      - name: MACHINEID
+      - name: MACHINE_ID
         description: "The primary key for this table"
 
   - name: stg_error_data #3
