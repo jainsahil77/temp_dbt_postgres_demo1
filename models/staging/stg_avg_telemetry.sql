@@ -2,7 +2,7 @@
 WITH TelemetryFeatures AS (
     SELECT
         t.DATETIME,
-        t."machineID",
+        t.machine_id,
         t.VOLT,
         t.ROTATE,
         t.PRESSURE,
@@ -10,13 +10,13 @@ WITH TelemetryFeatures AS (
         m.MODEL,
         m.AGE
     FROM
-        DBT_TEST.DBO."PdM_telemetry" t
-    JOIN DBT_TEST.DBO."PdM_machines" m ON t."machineID" = m."machineID"
+        DBT_TEST.DBO.pdm_telemetry t
+    JOIN DBT_TEST.DBO.pdm_machines m ON t.machine_id = m.machine_id
 )
 
 , AvgTelemetry AS (
     SELECT
-        "machineID",
+        machine_id,
         AVG(VOLT) AS AVG_VOLT,
         AVG(ROTATE) AS AVG_ROTATE,
         AVG(PRESSURE) AS AVG_PRESSURE,
@@ -24,7 +24,7 @@ WITH TelemetryFeatures AS (
     FROM
         TelemetryFeatures
     GROUP BY
-        "machineID"
+        machine_id
 )
 
 select * from AvgTelemetry
