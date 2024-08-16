@@ -37,7 +37,7 @@ ComprehensiveInsights AS (
         at.AVG_ROTATE,
         at.AVG_PRESSURE,
         at.AVG_VIBRATION,
-        ed.errorid,
+        ed.error_id,
         md.COMP,
         fd.FAILURE
     FROM
