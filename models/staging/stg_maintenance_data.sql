@@ -2,10 +2,10 @@
 with MaintenanceData AS (
     SELECT
         m.DATETIME,
-        m."machineID",
+        m.machine_id,
         m.COMP
     FROM
-        DBT_TEST.DBO."PdM_maint" m
+        DBT_TEST.DBO.pdm_maint m
 )
 
 select * from MaintenanceData
