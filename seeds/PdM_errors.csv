@@ -1,4 +1,4 @@
-"datetime","machineID","errorID"
+"datetime","machine_id","error_id"
 2015-01-03 07:00:00,1,"error1"
 2015-01-03 20:00:00,1,"error3"
 2015-01-04 06:00:00,1,"error5"
