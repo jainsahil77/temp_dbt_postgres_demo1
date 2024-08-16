@@ -2,10 +2,10 @@
 with ErrorData AS (
     SELECT
         e.DATETIME,
-        e."machineID",
-        e."errorID"
+        e.machine_id,
+        e.error_id
     FROM
-        DBT_TEST.DBO."PdM_errors" e
+        DBT_TEST.DBO.pdm_errors e
 )
 
 SELECT * from ErrorData
