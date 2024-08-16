@@ -2,10 +2,10 @@
 with FailureData AS (
     SELECT
         f.DATETIME,
-        f."machineID",
+        f.machine_id,
         f.FAILURE
     FROM
-        DBT_TEST.DBO."PdM_failures" f
+        DBT_TEST.DBO.pdm_failures f
 )
 
 select * from FailureData
